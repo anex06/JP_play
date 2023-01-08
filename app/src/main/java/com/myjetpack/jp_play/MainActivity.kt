@@ -12,7 +12,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,13 +23,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.myjetpack.jp_play.ui.theme.JP_playTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-         MainContent()
+            MainContent()
         }
     }
 }
@@ -49,7 +47,7 @@ data class User(
 )
 
 @Composable
-fun  MainContent(){
+fun  MainContents(){
     val user = User(id = 1)
     val users= remember {
         mutableStateListOf(user)
@@ -101,5 +99,5 @@ fun UsrCard(){
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-MainContent()
+    MainContents()
 }
