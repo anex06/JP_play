@@ -1,5 +1,6 @@
 package com.myjetpack.jp_play
 import android.graphics.fonts.FontStyle
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,14 +16,19 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 
 @Composable
-fun Task () {
+fun Task (navController: NavController?=null, item: String?=null) {
+
+    val context = LocalContext.current
+    Toast.makeText(context, item, Toast.LENGTH_LONG).show()
     Column(modifier = Modifier
         .fillMaxSize()
         .padding(

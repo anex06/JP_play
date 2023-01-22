@@ -12,6 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -48,7 +49,7 @@ fun Home(navController: NavHostController?=null) {
          TitleText(title = "My Tasks", 20.sp, fontWeight = FONT_WEIGHT_BOLD)
          LazyColumn {
              var i = 0
-             items((0..4).toList()){
+             items((0..5).toList()){
                  TaskCard("Item ${++i}", navController)
              }
          }
@@ -63,7 +64,7 @@ fun TaskCard(task: String, navController: NavHostController?) {
             .wrapContentHeight()
             .padding(top = 8.dp)
             .clickable {
-                navController?.navigate("task")
+                navController?.navigate("task?item=$task")//getting the task as argument
             }
     ) {
         Row(modifier = Modifier.padding(8.dp),
